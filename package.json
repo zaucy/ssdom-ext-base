@@ -1,0 +1,25 @@
+{
+  "name": "ssdom-ext-base",
+  "version": "1.0.1",
+  "description": "Base for all SSDOM extensions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaucy/ssdom-ext-base.git"
+  },
+  "keywords": [
+    "ssdom",
+    "extension",
+    "base",
+    "ssdom-extension"
+  ],
+  "author": "Ezekiel Warren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaucy/ssdom-ext-base/issues"
+  },
+  "homepage": "https://github.com/zaucy/ssdom-ext-base#readme"
+}
