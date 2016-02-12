@@ -13,6 +13,13 @@ class RegisteredScript {
 	}
 
 	parsePath(path) {
+		if(path.startsWith("//")
+		|| path.startsWith("http://")
+		|| path.startsWith("https://")) {
+			this.isExternal = true;
+		} else {
+			this.isExternal = false;
+		}
 		return path;
 	}
 
@@ -59,5 +66,11 @@ if(typeof module.parent.exports._ssdomRegisteredScripts === "undefined") {
 delete require.cache[__filename];
 
 exports.registerScript = function(path, options) {
-	module.parent.exports._ssdomRegisteredScripts.push(new RegisteredScript(path, options));
+	if(Array.isArray(path)) {
+		path.forEach(function(path) {
+			module.parent.exports._ssdomRegisteredScripts.push(new RegisteredScript(path, options));
+		});
+	} else {
+		module.parent.exports._ssdomRegisteredScripts.push(new RegisteredScript(path, options));
+	}
 };
