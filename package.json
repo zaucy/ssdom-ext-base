@@ -1,6 +1,6 @@
 {
   "name": "ssdom-ext-base",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Base for all SSDOM extensions.",
   "main": "index.js",
   "scripts": {

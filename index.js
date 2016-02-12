@@ -35,12 +35,14 @@ class RegisteredScript {
 				&& value !== "server"
 				&& value !== "client") {
 					console.warn(`[ssdom-ext-base] Registered script context=${value} is invalid. context may only be 'server-only', 'server', or 'client'. Defaulting to 'client'.`);
+					value = 'client';
 				}
 				break;
 			case 'run_at':
 				if(value !== "start"
 				&& value !== "end") {
 					console.warn(`[ssdom-ext-base] Registered script run_at=${value} is invalid. run_at may only be 'start' or 'end'. Defauling to 'start'.`);
+					value = 'start';
 				}
 				break;
 			default:
@@ -51,11 +53,11 @@ class RegisteredScript {
 	}
 };
 
-if(typeof module.parent._ssdomRegisteredScripts === "undefined") {
-	module.parent._ssdomRegisteredScripts = [];
+if(typeof module.parent.exports._ssdomRegisteredScripts === "undefined") {
+	module.parent.exports._ssdomRegisteredScripts = [];
 }
 delete require.cache[__filename];
 
 exports.registerScript = function(path, options) {
-	module.parent._ssdomRegisteredScripts.push(new RegisteredScript(path, options));
+	module.parent.exports._ssdomRegisteredScripts.push(new RegisteredScript(path, options));
 };
