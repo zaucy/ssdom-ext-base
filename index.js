@@ -1,6 +1,7 @@
 "use strict";
 
 const defaultScriptOptions = {
+	condition: "",
 	context: "client",
 	run_at: "start"
 };
