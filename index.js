@@ -53,6 +53,8 @@ class RegisteredScript {
 					value = 'start';
 				}
 				break;
+			case 'condition':
+				break;
 			default:
 				throw Error(`Registered Script option '${name}' is invalid.`);
 		}
